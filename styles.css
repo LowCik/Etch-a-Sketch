@@ -1,3 +1,11 @@
 body {
     background-color: #647db1;
 }
+
+.line {
+    flex: auto;
+    display: flex;
+    
+    height: 10px;
+    width: 10px;
+}
