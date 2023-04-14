@@ -8,16 +8,21 @@ puis dans ces ligne, les 16 div "Case".
   */
 function createGrill() {
   let size = 16;
-  console.log("yes");
-  console.log("haouais");
+
   for (let i = 0; i < size; i++) {
     const line = document.createElement('div');//créer "l'objet" div
-    line.classList.add('line-start');
-    line.style.backgroundColor = 'red';
-    grillContainer.append(line);
+    line.classList.add('line');
+    
+    for (let i = 0; i < size; i++) {
+      const cell = document.createElement('div');// créer une div
+      cell.classList.add('cell');
+      cell.textContent = i;
+      cell.style.backgroundColor = 'violet';
+      line.append(cell);
+    }
 
+    grillContainer.append(line); // l'ajoute a grill Container
   }
-  
-  console.log('bah oausi');
+
 }
 createGrill();

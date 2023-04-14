@@ -1,11 +1,12 @@
-body {
+ body {
     background-color: #647db1;
 }
 
-.line {
-    flex: auto;
+.line{
     display: flex;
-    
-    height: 10px;
-    width: 10px;
+    flex-direction: row;
+    border-style: 1px solid black;
+}
+.cell :hover{
+    background-color: blue;
 }
