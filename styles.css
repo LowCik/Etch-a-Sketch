@@ -1,12 +1,38 @@
- body {
-    background-color: #647db1;
+body {
+	background-color: #647db1;
 }
 
-.line{
-    display: flex;
-    flex-direction: row;
-    border-style: 1px solid black;
+.with-border {
+	border: 1px solid black;
 }
-.cell :hover{
-    background-color: blue;
+
+.flex {
+	display: flex;
+	flex: auto;
+}
+
+.grill-container {
+	display: flex;
+    flex-direction: column;
+	background-color: #64b1ab;
+    width:fit-content;
+    height: fit-content;
+	padding: 30px;
+}
+
+.line {
+	display: flex;
+	flex: auto;
+	justify-content: space-around;
+	flex-direction: row;
+}
+.cell {
+	min-width: 10px;
+	min-height: 10px;
+	width: auto;
+	height: auto;
+	background-color: white;
+}
+.cell:hover {
+	background-color: -10px;
 }
