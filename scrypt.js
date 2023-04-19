@@ -4,9 +4,9 @@ const grillContainer = document.querySelector('.grill-container');
 const sizeButton = document.querySelector('button.size');
 
 let size = askSize();
-let oldSize = 0;//initalise une variable global pour pouvoir delete l'ancienne grille.
 
 sizeButton.addEventListener('click', () => {
+  clearGrill();
   createGrill(askSize());
 });
 /* créer un grille de 16 par 16.
@@ -26,9 +26,18 @@ function initCell() {
   cell.classList.add('cell');
   cell.classList.add('flex');
   cell.classList.add('with-border')
-  cell.addEventListener('mouseover', () => console.log('y'));
+  cell.addEventListener('mouseover', () => {
+    cellBehavior(cell);
+  });
   return cell;
+}
 
+function cellBehavior(cell) {
+
+  return cell.style.backgroundColor = `rgb(
+      ${Math.random() * 255}, 
+      ${Math.random() * 255},
+      ${Math.random() * 255})`;
 }
 function askSize() {
   let size = prompt(`Enter a number.`)
@@ -37,14 +46,11 @@ function askSize() {
   return Math.round(size);
 
 }
-function clearGrill(oldSize) {
-  for (i = 0; i < old - size; i++) {
-    grillContainer.removeChild();
-  }
+function clearGrill() {
+  grillContainer.innerHTML = "";
 }
 
 function createGrill(size) {
-
   for (let i = 0; i < size; i++) {
     const line = initLine();
     for (let i = 0; i < size; i++) {
@@ -53,7 +59,6 @@ function createGrill(size) {
     }
     grillContainer.append(line); // l'ajoute a grill Container
   }
-  oldSize = size;
 }
 
 createGrill(size);
