@@ -4,6 +4,7 @@ const grillContainer = document.querySelector('.grill-container');
 const sizeButton = document.querySelector('button.size');
 
 let size = askSize();
+let behavior = "greyScale";
 
 sizeButton.addEventListener('click', () => {
   clearGrill();
@@ -33,11 +34,20 @@ function initCell() {
 }
 
 function cellBehavior(cell) {
-
-  return cell.style.backgroundColor = `rgb(
+  switch (behavior) {
+    case 'rainbow':
+      return cell.style.backgroundColor = `rgb(
       ${Math.random() * 255}, 
       ${Math.random() * 255},
       ${Math.random() * 255})`;
+      break;
+    case 'greyScale':
+      return cell.style.backgroundColor = `rgba(
+      255,255,255,120)`;
+      break;
+    case 'colored':
+      break;
+  }
 }
 function askSize() {
   let size = prompt(`Enter a number.`)
