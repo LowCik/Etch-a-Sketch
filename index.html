@@ -16,6 +16,11 @@
 			<option value="rainbow">a</option>
 			<option value="greyScale">b</option>
 			<option value="colored">c</option>
+
+<div class="slider-box">
+	<input type="range" value="24" min="1" max="60" id="range-slider" onmousemove="rangeSliderValue(this.value)" onchange="rangeSlider(this.value)">
+	<div id="progress-bar" style="width: 40%;"></div>
+</div>
 		</select>
 		<div class="grill-container"></div>
 	</body>

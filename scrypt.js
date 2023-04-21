@@ -26,7 +26,7 @@ function initCell() {
   const cell = document.createElement('div');// créer une div
   cell.classList.add('cell');
   cell.classList.add('flex');
-  cell.classList.add('with-border')
+  cell.classList.add('with-border');
   cell.addEventListener('mouseover', () => {
     cellBehavior(cell);
   });
@@ -42,8 +42,6 @@ function cellBehavior(cell) {
       ${Math.random() * 255})`;
       break;
     case 'greyScale':
-      return cell.style.backgroundColor = `rgba(
-      255,255,255,120)`;
       break;
     case 'colored':
       break;
