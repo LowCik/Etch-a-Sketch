@@ -5,7 +5,7 @@ const sizeButton = document.querySelector('button.size');
 const rainbowButton = document.querySelector('button.rainbow');
 const greyButton = document.querySelector('button.greyScale');
 
-let size = askSize();
+let size = 16;
 let behavior = "greyScale";
 
 
