@@ -2,9 +2,22 @@
 
 const grillContainer = document.querySelector('.grill-container');
 const sizeButton = document.querySelector('button.size');
+const rainbowButton = document.querySelector('button.rainbow');
+const greyButton = document.querySelector('button.greyScale');
 
 let size = askSize();
 let behavior = "greyScale";
+
+
+//change between rainbow and greyscale
+rainbowButton.addEventListener('click', () => {
+  behavior = 'rainbow';
+});
+
+greyButton.addEventListener('click', () => {
+  behavior = 'greyScale';
+});
+
 
 sizeButton.addEventListener('click', () => {
   clearGrill();
@@ -41,7 +54,15 @@ function cellBehavior(cell) {
       ${Math.random() * 255},
       ${Math.random() * 255})`;
       break;
+
     case 'greyScale':
+      const currentBgColor = getComputedStyle(cell).backgroundColor;
+      const rgb = currentBgColor.split(',');
+      let r = parseInt(rgb[0].split('(')[1]); //split au niveau du '(' et selectionne la deuxieme partie
+      let g = parseInt(rgb[1]);//deja bien séparé
+      let b = parseInt(rgb[2].split(')')[0])// récupère le avant le ')'
+
+      return cell.style.backgroundColor = `rgb(${r * 0.7},${g * 0.7},${b * 0.7})`;
       break;
     case 'colored':
       break;
@@ -68,5 +89,6 @@ function createGrill(size) {
     grillContainer.append(line); // l'ajoute a grill Container
   }
 }
+
 
 createGrill(size);
