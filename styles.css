@@ -1,9 +1,20 @@
 body {
 	background-color: #647db1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap:30px;
 }
 
 .with-border {
-	border: 1px solid black;
+	border: 1px solid rgb(167, 157, 157);
+}
+.button.menu{
+	width: 50%;
+display: flex;
+justify-content: space-evenly;
+
 }
 
 .flex {
@@ -12,6 +23,8 @@ body {
 }
 
 .grill-container {
+	min-width: 500px;
+	min-height: 500px;
 	display: flex;
     flex-direction: column;
 	background-color: #64b1ab;
@@ -27,8 +40,8 @@ body {
 	flex-direction: row;
 }
 .cell {
-	min-width: 10px;
-	min-height: 10px;
+	min-width: 1px;
+	min-height: 1px;
 	width: auto;
 	height: auto;
 	background-color: white;

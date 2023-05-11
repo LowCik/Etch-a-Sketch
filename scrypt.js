@@ -4,6 +4,7 @@ const grillContainer = document.querySelector('.grill-container');
 const sizeButton = document.querySelector('button.size');
 const rainbowButton = document.querySelector('button.rainbow');
 const greyButton = document.querySelector('button.greyScale');
+const borderButton = document.querySelector('button.border');
 
 let size = 16;
 let behavior = "greyScale";
@@ -17,6 +18,17 @@ rainbowButton.addEventListener('click', () => {
 greyButton.addEventListener('click', () => {
   behavior = 'greyScale';
 });
+
+borderButton.addEventListener('click', () => {
+  const cells = document.querySelectorAll('.cell');
+  cells.forEach((cell) => {
+    if (cell.classList.contains("with-border")) {
+      cell.classList.remove("with-border");
+    } else {
+      cell.classList.add("with-border");
+    }
+  })
+})
 
 
 sizeButton.addEventListener('click', () => {
@@ -70,8 +82,8 @@ function cellBehavior(cell) {
 }
 function askSize() {
   let size = prompt(`Enter a number.`)
-  while (Math.round(size) <= 0)
-    size = prompt(`Enter a strictly positive number.`);
+  while (Math.round(size) <= 0 || Math.round(size) > 64)
+    size = prompt(`Enter a strictly positive number between 1 and 64`);
   return Math.round(size);
 
 }
